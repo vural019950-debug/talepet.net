@@ -146,12 +146,11 @@ document.getElementById("requestForm").addEventListener("submit", async (e) => {
 
   const { error } = await supabaseClient
   .from("requests")
-  .insert({
-    customer: user.id,
-    category: category,
-    title: title,
-    description: description
-  });
+.insert({
+  customer_id: user.id,
+  category: category,
+  description: description
+});
 
   if (error) {
     msg.textContent = "Hata: " + error.message;

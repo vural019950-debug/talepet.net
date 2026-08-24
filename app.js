@@ -71,7 +71,7 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     .from("profiles")
     .insert({
       id: data.user.id,
-      name: name,
+      fullname: name,
       role: role
     });
 

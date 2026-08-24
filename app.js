@@ -141,14 +141,13 @@ document.getElementById("requestForm").addEventListener("submit", async (e) => {
   msg.textContent = "Talep yayınlanıyor...";
 
   const { error } = await supabaseClient
-    .from("istekler")
-    .insert({
-      user_id: user.id,
-      category,
-      title,
-      description,
-      location
-    });
+  .from("istekler")
+  .insert({
+    customer: user.id,
+    category: category,
+    title: title,
+    description: description
+  });
 
   if (error) {
     msg.textContent = "Hata: " + error.message;

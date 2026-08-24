@@ -68,7 +68,7 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
   }
 
   const { error: profileError } = await supabaseClient
-    .from("profiller")
+    .from("profiles")
     .insert({
       id: data.user.id,
       name: name,

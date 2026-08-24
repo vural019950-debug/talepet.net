@@ -146,11 +146,14 @@ document.getElementById("requestForm").addEventListener("submit", async (e) => {
 
  const { error } = await supabaseClient
   .from("requests")
+  const { error } = await supabaseClient
+  .from("requests")
   .insert({
     customer_id: user.id,
     category: category,
     title: title,
-    description: description
+    description: description,
+    location: location
   });
 
   if (error) {
